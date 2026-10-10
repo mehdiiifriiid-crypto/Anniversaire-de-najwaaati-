@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10091c">
+<title>Joyeux Anniversaire Najwati ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Great+Vibes&display=swap');
+:root{--pink:#ff7898;--rose:#ff416c;--glass:rgba(255,255,255,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,Arial,sans-serif;color:#fff;min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 15% 15%,rgba(255,80,140,.16),transparent 28%),radial-gradient(circle at 85% 70%,rgba(110,80,255,.18),transparent 28%),linear-gradient(135deg,#080611,#17102c,#090812)}
+body.locked{overflow:hidden}
+button{font:inherit}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:1;transform:scale(1.4)}}
+#opening{position:fixed;inset:0;z-index:9999;display:flex;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle,#24133c,#080611 68%);transition:opacity 1s ease}
+.opening-inner{padding:28px;animation:appear 1.3s ease}
+@keyframes appear{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.opening-heart{font-size:clamp(60px,15vw,90px);animation:heartBeat 1.5s infinite;filter:drop-shadow(0 0 25px #ff527e)}
+@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.opening-inner h1{font-family:"Great Vibes",cursive;font-size:clamp(3rem,12vw,4.5rem);color:#ff8bab;margin:15px 0}
+.opening-inner p{color:#ddd;margin-bottom:25px;line-height:1.9}
+.open-btn,.magic-btn{border:0;padding:13px 25px;border-radius:50px;color:#fff;cursor:pointer;background:linear-gradient(135deg,#ff416c,#ff7598);box-shadow:0 8px 30px #ff416c55;transition:.25s}
+.open-btn:hover,.magic-btn:hover{transform:translateY(-2px) scale(1.02)}
+.container{position:relative;z-index:2;width:min(900px,92%);margin:auto;padding-bottom:60px}
+header{text-align:center;padding:65px 8px 25px}
+header h1{font-size:clamp(1.8rem,7vw,3.8rem);color:var(--pink);text-shadow:0 0 25px #ff508255;line-height:1.5}
+.subtitle{color:#ddd;margin-top:8px;line-height:1.9}
+.glass{background:var(--glass);border:1px solid #ff96b433;border-radius:22px;padding:clamp(17px,4vw,25px);margin:20px 0;backdrop-filter:blur(12px);box-shadow:0 15px 50px #0003}
+.countdown-title,.section-title{color:#ff91ad;text-align:center;margin-bottom:18px}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.time-card{text-align:center;padding:14px 4px;border-radius:14px;background:#ffffff0d}
+.time-card strong{display:block;font-size:clamp(1.2rem,5vw,1.7rem)}
+.time-card span{color:#bbb;font-size:.8rem}
+#timer{text-align:center;line-height:2.1;font-weight:700}
+.music-player{text-align:center}
+.music-player h3{color:#ff8bab;margin-bottom:12px}
+audio{width:100%;max-width:400px}
+.story{line-height:2.1;color:#eee;text-align:right}
+.timeline{position:relative;margin-top:15px}
+.timeline:before{content:"";position:absolute;right:13px;top:0;bottom:0;width:2px;background:linear-gradient(#ff547f,transparent)}
+.event{position:relative;padding:12px 42px 18px 3px}
+.event:before{content:"❤️";position:absolute;right:0;top:10px;font-size:18px}
+.event h3{color:#ff91ad;margin-bottom:4px}
+.event p{color:#ccc;line-height:1.9}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.gallery img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:15px;border:1px solid #ff789866;cursor:pointer;transition:.25s;background:#21152e}
+.gallery img:hover{transform:scale(1.025);box-shadow:0 0 20px #ff467855}
+.photo-note{font-size:.82rem;color:#aaa;text-align:center;margin-top:12px}
+.envelope{margin:10px 0;border:1px solid #ff789840;background:#ffffff08;border-radius:14px;overflow:hidden}
+.envelope-head{width:100%;text-align:right;padding:15px;border:0;background:transparent;cursor:pointer;display:flex;justify-content:space-between;gap:10px;color:#ffb1c3}
+.envelope-content{display:none;padding:0 15px 16px;color:#eee;line-height:2}
+.envelope.open .envelope-content{display:block;animation:appear .3s ease}
+.plus{transition:.25s;flex:none}
+.envelope.open .plus{transform:rotate(45deg)}
+.secret-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.secret{min-height:82px;border-radius:16px;border:1px solid #ff78984d;background:#ffffff09;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:29px;transition:.2s}
+.secret:hover{transform:translateY(-3px);background:#ff648522}
+.secret.found{background:#ff508a2e}
+.game{text-align:center}
+.question{font-size:1.08rem;margin:15px 0;color:#fff;line-height:1.8}
+.answers{display:grid;gap:9px}
+.answer{border:1px solid #ff78984d;background:#ffffff0d;color:#fff;padding:12px;border-radius:13px;cursor:pointer}
+.answer:hover{background:#ff508a2e}
+#gameResult{margin-top:13px;color:#ff9bb5;min-height:28px;line-height:1.8}
+.surprise{text-align:center;padding:30px 18px;border-radius:25px;background:linear-gradient(135deg,#761b49,#ff416c,#57205d);box-shadow:0 15px 45px #ff326e33;margin-top:25px}
+.surprise h2{font-size:clamp(1.6rem,6vw,2.3rem);margin-bottom:14px}
+.surprise p{line-height:2}
+#finalMessage{display:none;margin-top:24px;animation:appear 1s ease}
+.final-text{font-size:clamp(1rem,3.8vw,1.2rem);line-height:2.2}
+.signature{font-family:"Great Vibes",cursive;font-size:2.5rem;color:#ffd1dc;margin-top:18px}
+#photoModal{position:fixed;inset:0;z-index:5000;background:#000e;display:none;align-items:center;justify-content:center;padding:20px}
+#photoModal img{max-width:95%;max-height:82vh;object-fit:contain;border-radius:15px}
+.close{position:absolute;top:10px;left:20px;font-size:38px;cursor:pointer;background:none;border:0;color:white}
+.floating-heart{position:fixed;pointer-events:none;z-index:7000;animation:floatUp 4s linear forwards}
+@keyframes floatUp{from{transform:translateY(0) scale(.7);opacity:1}to{transform:translateY(-90vh) scale(1.4) rotate(25deg);opacity:0}}
+.firework{position:fixed;z-index:8000;pointer-events:none;font-size:27px;animation:boom 1.4s ease forwards}
+@keyframes boom{0%{transform:scale(.2);opacity:0}20%{opacity:1}100%{transform:scale(3.5) translateY(-65px);opacity:0}}
+footer{text-align:center;color:#888;margin-top:35px;font-size:.85rem}
+@media(max-width:600px){header{padding-top:45px}.countdown{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.secret-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.glass{margin:15px 0}.event{padding-right:38px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* رسالة واحدة في كل مرة */
+.message-stage{max-width:720px;margin:0 auto;text-align:center}
+.message-progress{color:#ff9ab5;font-size:14px;margin:4px 0 18px}
+.single-message{min-height:190px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px 20px;border:1px solid #ff789866;border-radius:22px;background:linear-gradient(145deg,#ffffff0b,#ff416c12);box-shadow:0 12px 35px #0002}
+.single-message .message-title{color:#ffb3c7;font-size:17px;font-weight:700;margin-bottom:18px}
+.single-message .message-body{font-size:16px;line-height:2;color:#fff;white-space:pre-wrap}
+.message-controls{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+.message-controls button{border:1px solid #ff789877;border-radius:999px;padding:10px 20px;background:#ffffff0b;color:#fff;font-family:inherit;cursor:pointer}
+.message-controls button.primary{background:linear-gradient(135deg,#ff416c,#ff7598);border:0}
+.message-controls button:disabled{opacity:.35;cursor:not-allowed}
+.site-dedication{margin:10px auto 0;max-width:700px;color:#ffd5e0;font-size:14px;line-height:2;text-align:center}
+
+</style>
+</head>
+<body class="locked">
+<div id="stars" aria-hidden="true"></div>
+<div id="opening">
+  <div class="opening-inner">
+    <div class="opening-heart">❤️</div>
+    <h1>Najwati...</h1>
+    <p>عندي ليك حاجة صغيرة مخبيها من أجلك 🤍<br>بصح لازم تفتحيها وحدك...</p>
+    <button class="open-btn" type="button" onclick="openSite()">Ouvre ton cadeau 🎁</button>
+  </div>
+</div>
+
+<main class="container">
+<header>
+  <h1>Joyeux Anniversaire Najwati ❤️</h1>
+  <p class="subtitle">إلى فكرونة قلبي، لي مْعَمّرة عليا الدنيا كلها.</p>
+</header>
+
+<section class="glass">
+  <h2 class="countdown-title">🎂 العدّ التنازلي لعيد ميلادك</h2>
+  <div class="countdown">
+    <div class="time-card"><strong id="cdDays">0</strong><span>يوم</span></div>
+    <div class="time-card"><strong id="cdHours">0</strong><span>ساعة</span></div>
+    <div class="time-card"><strong id="cdMinutes">0</strong><span>دقيقة</span></div>
+    <div class="time-card"><strong id="cdSeconds">0</strong><span>ثانية</span></div>
+  </div>
+  <p id="birthdayNote" style="text-align:center;color:#ffb1c3;margin-top:12px"></p>
+</section>
+
+<section class="glass">
+  <h2 class="section-title">⏳ شحال من نهار من 08/12/2024؟</h2>
+  <div id="timer">نحسبلكم...</div>
+</section>
+
+<section class="glass music-player">
+  <h3>🎵 أغنيتنا: Amine 31 — Datli Galbi ❤️</h3>
+  <p style="color:#ddd;line-height:1.9;margin-bottom:14px">شغّلي الأغنية من هنا، وخلي ذكرياتنا ترافق هاذ الهدية. الموسيقى ما تبداش وحدها؛ اضغطي تشغيل كي تكوني واجدة. 🎹</p>
+  <div style="position:relative;width:100%;max-width:560px;margin:0 auto;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid #ff789866">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/Cz8Lz6KF2xA"
+      title="Amine 31 - Datli Galbi"
+      style="position:absolute;inset:0;width:100%;height:100%;border:0"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <p style="color:#aaa;margin-top:12px;font-size:.82rem">إذا ما خدمش المشغّل، <a href="https://www.youtube.com/watch?v=Cz8Lz6KF2xA" target="_blank" rel="noopener noreferrer" style="color:#ff9bb5">افتحي الأغنية على YouTube</a>.</p>
+</section>
+
+<section class="glass">
+  <h2 class="section-title">📖 Hikayat Awl Likaa</h2>
+  <div class="story">
+    تتفكري نهار التلاقينا أول مرة قدام CEM Joker Pasteur Fille؟
+    كنا حشمانين بالزاف من بعضنا... سلمتِ عليا وقلت لك "CV؟"،
+    جاوبتيني بـ "الحمد لله". ومن بعد قلت لك: "سما أنتِ هي نجوا؟"
+    ومن ديك اللحظة، ما كنتش نعرف بلي هذيك اللحظة الصغيرة راح تكون بداية حاجة كبيرة بزاف في حياتي. ❤️
+  </div>
+</section>
+
+<section class="glass">
+  <h2 class="section-title">❤️ قصتنا في شوية تواريخ</h2>
+  <div class="timeline">
+    <div class="event"><h3>08 / 12 / 2024</h3><p>البداية... النهار لي دخلتي فيه لحياتي وبدلتي بزاف حوايج بلا ما نعرف.</p></div>
+    <div class="event"><h3>أول لقاء</h3><p>CEM Joker Pasteur Fille... مكان عادي، بصح بالنسبة ليا ولى واحد من أجمل الأماكن.</p></div>
+    <div class="event"><h3>أول ذكريات</h3><p>من الكلام البسيط للضحك، ومن الضحك للذكريات لي ما نحبش ننساها.</p></div>
+    <div class="event"><h3>اليوم ❤️</h3><p>ماشي غير ذكرى قديمة... مازال نكتب معاك أجمل فصول القصة.</p></div>
+    <div class="event"><h3>المستقبل ♾️</h3><p>والباقي؟ مازال ما كتبناهش... ونتمنى نكتبوه بجوج.</p></div>
+  </div>
+</section>
+
+<section class="glass">
+  <h2 class="section-title">📸 شوية من ذكرياتنا</h2>
+  <div class="gallery">
+    <img loading="lazy" src="https://i.ibb.co/6R05K43/1000001567.jpg" alt="ذكرى 1" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/1n5hQ3g/1000001566.jpg" alt="ذكرى 2" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/8b72g8L/1000001558.jpg" alt="ذكرى 3" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/9v35Hq2/1000001568.jpg" alt="ذكرى 4" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/0V8s82W/1000001559.jpg" alt="ذكرى 5" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/3k5fH82/1000001561.jpg" alt="ذكرى 6" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/4g9Q2jS/1000001560.jpg" alt="ذكرى 7" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/7X1h02v/1000001562.jpg" alt="ذكرى 8" onclick="openPhoto(this.src)">
+    <img loading="lazy" src="https://i.ibb.co/5W8f72q/1000001565.jpg" alt="ذكرى 9" onclick="openPhoto(this.src)">
+  </div>
+  <p class="photo-note">إذا صورة ما ظهرتش، تأكدي من رابطها في خدمة استضافة الصور.</p>
+</section>
+
+<section class="glass">
+  <h2 class="section-title">💌 16 رسالة من قلبي ليك</h2>
+  <p style="text-align:center;color:#ccc;line-height:1.9;margin:-4px 0 20px">كل مرة افتحي رسالة وحدها، وخلي الكلمات توصلك بشوية ❤️</p>
+  <div class="message-stage" id="messages">
+    <div class="message-progress" id="messageProgress" aria-live="polite">الرسالة 1 من 16</div>
+    <div class="single-message" aria-live="polite" aria-atomic="true">
+      <div class="message-title" id="singleMessageTitle">رسالة لنجواتي ❤️</div>
+      <div class="message-body" id="singleMessageBody"></div>
+    </div>
+    <div class="message-controls">
+      <button type="button" id="previousMessage" disabled>← الرسالة اللي قبل</button>
+      <button type="button" class="primary" id="nextMessage">الرسالة الجاية 💌</button>
+    </div>
+    <p class="site-dedication">كل هاذ الموقع خدمو ناظيم على جالك يا نجواتي، من قلبو وبكل حب، غير باش يفرّحك ويشوف ضحكتك ❤️</p>
+  </div>
+</section>
+
+<section class="glass">
+  <h2 class="section-title">🔐 كاين أسرار مخبيين...</h2>
+  <p style="text-align:center;color:#bbb;margin-bottom:18px;line-height:1.8">اضغطي على الرموز كامل باش تفتحي المرحلة الأخيرة 👀❤️</p>
+  <div class="secret-grid">
+    <button class="secret" type="button" onclick="findSecret(this)" aria-label="سر 1">❤️</button>
+    <button class="secret" type="button" onclick="findSecret(this)" aria-label="سر 2">✨</button>
+    <button class="secret" type="button" onclick="findSecret(this)" aria-label="سر 3">💌</button>
+    <button class="secret" type="button" onclick="findSecret(this)" aria-label="سر 4">🌙</button>
+    <button class="secret" type="button" onclick="findSecret(this)" aria-label="سر 5">💎</button>
+    <button class="secret" type="button" onclick="findSecret(this)" aria-label="سر 6">🌹</button>
+  </div>
+  <p id="secretCounter" style="text-align:center;color:#ff91ad;margin-top:17px">0 / 6 أسرار</p>
+</section>
+
+<section class="glass game">
+  <h2 class="section-title">🎮 اختبار صغير لنجواتي</h2>
+  <div id="gameArea">
+    <div class="question">شكون هي أهم وحدة في هاذ الموقع؟ 😌</div>
+    <div class="answers">
+      <button class="answer" type="button" onclick="answerGame(false)">أنا 😂</button>
+      <button class="answer" type="button" onclick="answerGame(true)">نجوا ❤️</button>
+      <button class="answer" type="button" onclick="answerGame(false)">Google 😭</button>
+    </div>
+    <div id="gameResult" role="status" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="surprise">
+  <h2>🎁 La Grande Surprise</h2>
+  <p>وصلتي لهنا؟ 😭❤️<br>إذن كاين حاجة أخيرة لازم تشوفيها...</p>
+  <button class="magic-btn" id="finalButton" type="button" onclick="finalSurprise()">Ouvrir la dernière surprise ✨</button>
+  <div id="finalMessage">
+    <div class="final-text">
+      نجواتي... ❤️<br><br>
+      اليوم ما نحبش نقولك غير "عيد ميلاد سعيد". نحب نقولك بلي وجودك في حياتي وحدو هدية.<br><br>
+      من نهار 08/12/2024 حتى لليوم، كاين بزاف لحظات عشناهم، وبزاف لحظات مازال نستناو نعيشوهم.<br><br>
+      إذا كانت هذي الصفحة فيها صور ورسائل وذكريات... فأنتِ بالنسبة ليا أكبر من كامل هاذ الشي.<br><br>
+      نتمنى عامك الجديد يكون مليان فرحة، نجاح، راحة، وضحكة ما تفارقش وجهك.<br><br>
+      كل عام وأنتِ نجواتي. ❤️
+    </div>
+    <div class="signature">Avec tout mon cœur ❤️</div>
+  </div>
+</section>
+<footer>
+  Made with ❤️ by Nazim, specially for Najwa
+  <p class="site-dedication">ناظيم خدم هاذ الموقع على جالك يا نجواتي، باش يفرّحك ويخلي عيد ميلادك ذكرى حلوة تبقى في قلبك ❤️</p>
+</footer>
+</main>
+
+<div id="photoModal" role="dialog" aria-modal="true" aria-label="عرض الصورة الكبيرة" onclick="closePhoto(event)">
+  <button class="close" type="button" aria-label="إغلاق الصورة" onclick="closePhoto(event)">×</button>
+  <img id="modalImg" alt="صورة من الذكريات">
+</div>
+
+<script>
+"use strict";
+
+/* نجوم الخلفية */
+const stars = document.getElementById("stars");
+for (let i = 0; i < 100; i++) {
+  const star = document.createElement("span");
+  star.className = "star";
+  star.style.left = (Math.random() * 100) + "%";
+  star.style.top = (Math.random() * 100) + "%";
+  star.style.animationDelay = (Math.random() * 3) + "s";
+  stars.appendChild(star);
+}
+
+function openSite() {
+  const opening = document.getElementById("opening");
+  opening.style.opacity = "0";
+  document.body.classList.remove("locked");
+  window.setTimeout(() => { opening.style.display = "none"; spawnHearts(12); }, 1000);
+}
+
+function spawnHearts(count = 5) {
+  const symbols = ["❤️", "💖", "💕", "✨", "💗"];
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("span");
+    heart.className = "floating-heart";
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = (Math.random() * 94) + "vw";
+    heart.style.bottom = "-30px";
+    heart.style.fontSize = (18 + Math.random() * 22) + "px";
+    document.body.appendChild(heart);
+    window.setTimeout(() => heart.remove(), 4100);
+  }
+}
+
+const startDate = new Date(2024, 11, 8, 0, 0, 0);
+function updateTimer() {
+  const diff = Math.max(0, Date.now() - startDate.getTime());
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor(diff / 3600000) % 24;
+  const minutes = Math.floor(diff / 60000) % 60;
+  const seconds = Math.floor(diff / 1000) % 60;
+  document.getElementById("timer").textContent =
+    `${days} يوم ❤️ ${hours} ساعة ❤️ ${minutes} دقيقة ❤️ ${seconds} ثانية`;
+}
+updateTimer();
+window.setInterval(updateTimer, 1000);
+
+/* عيد الميلاد: 11 أكتوبر، حسب توقيت الجهاز */
+function updateCountdown() {
+  const now = new Date();
+  let target = new Date(now.getFullYear(), 9, 11, 0, 0, 0);
+  if (now >= target) target = new Date(now.getFullYear() + 1, 9, 11, 0, 0, 0);
+  const diff = target.getTime() - now.getTime();
+  document.getElementById("cdDays").textContent = Math.floor(diff / 86400000);
+  document.getElementById("cdHours").textContent = Math.floor(diff / 3600000) % 24;
+  document.getElementById("cdMinutes").textContent = Math.floor(diff / 60000) % 60;
+  document.getElementById("cdSeconds").textContent = Math.floor(diff / 1000) % 60;
+  document.getElementById("birthdayNote").textContent =
+    (now.getMonth() === 9 && now.getDate() === 11)
+      ? "عيد ميلاد سعيد يا نجواتي! اليوم نهارك ❤️"
+      : "كل ثانية تقربنا لنهارك المميز ❤️";
+}
+updateCountdown();
+window.setInterval(updateCountdown, 1000);
+
+/* الرسائل: تظهر رسالة واحدة فقط في كل مرة */
+const messages = [
+  "3id milad sa3id ya aghla ma malket rohi ❤️",
+  "Les distances w France w Dzair 🌍",
+  "Awl nhar f CEM Joker Pasteur Fille ✨",
+  "Chokran 3la kolchi 🤝",
+  "Dahktk hiya ta9ati 😊",
+  "Nkon 9ad el masoliyya 💪",
+  "Tfakor ga3 tafasil binatna 🕰️",
+  "Enti habibti w sahbti 💍",
+  "Omniya istajabat laha sama ⭐",
+  "Ghorba w sabr 🌊",
+  "Nesna nhar nlemou fih ❤️",
+  "Kol sana w enti tzdadi farha 🌹",
+  "Rani hna nsema3lek 🤍",
+  "9albi yed3ilek win ma konti 🇫🇷",
+  "Ismek mربوط بأحلى الذكريات 💌",
+  "Hobbi lik b lhanan w l'ihtiram ♾️"
+];
+const messageTexts = [
+  'يا نجواتي، عيد ميلاد سعيد يا أغلى إنسانة على قلبي ❤️ ربي يجعل عامك الجديد مليان فرحة ونجاح وراحة، ويحققلك كل حاجة تتمنايها. اليوم نهارك، وتستاهلي فيه كل الحب.',
+  'حتى لو كانت بيناتنا مسافة، تبقاي حاضرة في بالي وفي تفاصيل نهاري. نتمنى يجي نهار نضحكو فيه على هاذ البعد ونقولو: الحمد لله صبرنا ووصلنا للحظات اللي تمنيناها. 🌍❤️',
+  'من أول لقاء في CEM Joker Pasteur Fille، ما كنتش نعرف بلي هاذ الذكرى الصغيرة تولّي عندها قيمة كبيرة عندي. مرات أجمل الحكايات تبدأ بلحظة عادية، وبعدها تولّي جزء غالي من القلب. ✨',
+  'شكراً على كل لحظة حلوة، على ضحكتك، على كلامك، وعلى وجودك في حياتي. يمكن ما نعرفش ديما نعبّر بالطريقة المثالية، بصح نحبك تعرفي بلي نقدّر وجودك وما نعتبر حتى حاجة بيناتنا أمر عادي. 🤍',
+  'ضحكتك من الحوايج اللي نتمنى نشوفها ديما. ربي يبعد عليك كل ما يوجع قلبك، ويعطيك أسباب كثيرة باش تضحكي من قلبك. وإذا قدرت نكون سبب صغير في فرحتك، هذي وحدها تفرحني بزاف. 😊',
+  'ما نقدرش نوعدك بلي نكون كامل وما نغلطش، بصح نقدر نحاول كل يوم نكون أحسن: نسمعلك، نفهمك، نعتذر كي نغلط، ونحافظ على الثقة والاحترام بيناتنا. بالنسبة ليا الحب أفعال واهتمام، ماشي كلام برك. 🫶',
+  'نحب التفاصيل الصغيرة اللي تجمعنا: كلمة تضحكنا، ذكرى نرجعولها، وحتى الحوايج البسيطة اللي يمكن ما يفهم قيمتها حتى واحد غيرنا. هاذ التفاصيل هي اللي تعطي لحكايتنا طعمها الخاص. 🕰️',
+  'يا نجواتي، نتمنى تكوني معايا ديما على طبيعتك، تفرحي بلا ما تخبي فرحتك، وتهدري كي يكون في قلبك كلام. نحب نكون إنسان ترتاحي معاه وتحسي بلي رأيك ومشاعرك مهمّين. 💍',
+  'وجودك في حياتي من الحوايج اللي نحمد ربي عليها. نتمنى نكون سبب خير في أيامك، ونشوفك تحققي أحلامك وحدة بوحدة، وتبقي فخورة بروحك وبكل خطوة تديريها. ⭐',
+  'المسافة تقدر تصعّب بعض الأيام، بصح نتمنى ديما نواجهوها بالصبر والصدق والثقة. ما نحبش الوعود الكبيرة قد ما نحب الأفعال الصغيرة اللي تخلّي كل واحد فينا يحس بلي راهو مقدّر ومسموع. 🌊',
+  'نتخيل نهار نكونو قاعدين نحكيو على هاذ الفترة ونضحكو على الرسائل والذكريات اللي جمعاتنا. نتمنى المستقبل يجيبلك راحة وفرحة، ويخلينا نتعلمو كيفاش نكونو أحنّ وأفهم مع بعضانا. ❤️',
+  'كل عام وأنتِ أقرب لأحلامك، وأكثر راحة وطمأنينة. نتمنالك نجاح يفرحك، ناس صافية تحبلك الخير، وأيام مليانة أخبار مليحة. عيد ميلاد سعيد يا أجمل نجواتي. 🌹',
+  'ما لازمش تكوني قوية كل دقيقة، وما لازمش تخبي حزنك باش ما تقلقينيش. إذا حبيتي تهدري نسمعلك، وإذا احتجتي وقت لنفسك نحترمك. المهم تكوني مرتاحة وتحسي بلي مشاعرك عندها قيمة. 🤍',
+  'وين ما تكوني، نتمنى ربي يحفظك ويفرّح قلبك ويبعد عليك التعب. مرات نلقاني ندعيلك في بالي من غير ما نقولك، غير على خاطر نحب نشوفك بخير ومتهنية. 🇫🇷❤️',
+  'اسمك ما بقاش غير اسم في هاتفي؛ ولى مربوط بضحكات وذكريات ولحظات نحب نتفكرها. شكراً لأنك كنتي جزء من أيامي، ونتمنى نزيدو نصنعو ذكريات جميلة تليق بيك. 💌',
+  'يا نجواتي، نحبك بحب نتمنى يكبر معاه الحنان والتفاهم والاحترام. ما نطلبش من الحياة تكون كاملة، غير نتمنى نبقاو صادقين مع رواحنا، نفرحو لفرحة بعضانا، ونحافظو على الخير اللي بيناتنا. عيد ميلاد سعيد يا غالية. ♾️❤️'
+];
+let currentMessage = 0;
+const titleEl = document.getElementById("singleMessageTitle");
+const bodyEl = document.getElementById("singleMessageBody");
+const progressEl = document.getElementById("messageProgress");
+const prevBtn = document.getElementById("previousMessage");
+const nextBtn = document.getElementById("nextMessage");
+
+function renderMessage() {
+  titleEl.textContent = messages[currentMessage];
+  bodyEl.textContent = messageTexts[currentMessage];
+  progressEl.textContent = `الرسالة ${currentMessage + 1} من ${messageTexts.length} ❤️`;
+  prevBtn.disabled = currentMessage === 0;
+  nextBtn.disabled = currentMessage === messageTexts.length - 1;
+  nextBtn.textContent = currentMessage === messageTexts.length - 1
+    ? "كمّلتِ الرسائل ❤️"
+    : "الرسالة الجاية 💌";
+}
+prevBtn.addEventListener("click", () => {
+  if (currentMessage > 0) currentMessage--;
+  renderMessage();
+});
+nextBtn.addEventListener("click", () => {
+  if (currentMessage < messageTexts.length - 1) currentMessage++;
+  renderMessage();
+});
+renderMessage();
+
+/* ستة أسرار */
+let foundSecrets = 0;
+function findSecret(el) {
+  if (el.classList.contains("found")) return;
+  el.classList.add("found");
+  el.textContent = "💖";
+  el.disabled = true;
+  foundSecrets++;
+  document.getElementById("secretCounter").textContent = `${foundSecrets} / 6 أسرار`;
+  spawnHearts(3);
+  if (foundSecrets === 6) {
+    document.getElementById("secretCounter").textContent =
+      "🎉 لقيتيهم كامل! ديري الاختبار ومن بعد روحي للمفاجأة الأخيرة ❤️";
+    document.querySelector(".game").scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+let gameAnswered = false;
+function answerGame(correct) {
+  const result = document.getElementById("gameResult");
+  if (gameAnswered) {
+    result.textContent = "جاوبتي من قبل يا نجواتي ❤️ روحي شوفي المفاجأة الأخيرة!";
+    return;
+  }
+  if (correct) {
+    gameAnswered = true;
+    result.textContent = "صحّ ❤️❤️ عرفتي روحك نجمة الموقع! تقدري تروحي للمفاجأة الأخيرة.";
+    spawnHearts(8);
+  } else {
+    result.textContent = "هههه جرّبي مرة أخرى يا نجواتي 😭❤️";
+  }
+}
+
+function finalSurprise() {
+  if (foundSecrets < 6) {
+    document.getElementById("secretCounter").textContent =
+      `باقي ${6 - foundSecrets} أسرار! لقيهم كامل باش تكملي اللعبة ❤️`;
+    document.querySelector(".secret-grid").scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  if (!gameAnswered) {
+    document.getElementById("gameResult").textContent = "جاوبي صح على الاختبار الصغير ومن بعد افتحي المفاجأة ❤️";
+    document.querySelector(".game").scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  document.getElementById("finalMessage").style.display = "block";
+  document.getElementById("finalButton").textContent = "المفاجأة تفتحت ❤️";
+  document.getElementById("finalButton").disabled = true;
+  spawnHearts(25);
+  for (let i = 0; i < 8; i++) {
+    window.setTimeout(() => {
+      const fw = document.createElement("span");
+      fw.className = "firework";
+      fw.textContent = ["✨", "💖", "🎉", "❤️"][i % 4];
+      fw.style.left = (10 + Math.random() * 80) + "vw";
+      fw.style.top = (20 + Math.random() * 55) + "vh";
+      document.body.appendChild(fw);
+      window.setTimeout(() => fw.remove(), 1600);
+    }, i * 160);
+  }
+  document.getElementById("finalMessage").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+/* عرض الصور */
+function openPhoto(src) {
+  const modal = document.getElementById("photoModal");
+  document.getElementById("modalImg").src = src;
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+function closePhoto(event) {
+  if (event && event.target && event.target.id === "modalImg") return;
+  document.getElementById("photoModal").style.display = "none";
+  document.getElementById("modalImg").src = "";
+  document.body.style.overflow = document.body.classList.contains("locked") ? "hidden" : "";
+}
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closePhoto();
+});
+</script>
+</body>
+</html>
